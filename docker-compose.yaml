@@ -1,0 +1,16 @@
+version:  "3.7"
+
+
+services:
+  go:
+    container_name: golang-querier
+    image: golang-querier:latest
+    volumes:
+    - ./:/app
+
+  mysql:
+    container_name: mysql
+    image: mariadb:10.5.16-focal
+    environment:
+      MARIADB_DATABASE: myexample 
+      MARIADB_ROOT_PASSWORD: hahaha
